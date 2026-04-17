@@ -14,6 +14,6 @@ def run():
     sandbox.process.exec("python run_pipeline.py")
 
     # get result
-    result = sandbox.fs.download_file("outputs/applications.json")
+    result = sandbox.fs.download_file("./outputs/applications.json")
 
     return {"data": result}
