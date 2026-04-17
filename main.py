@@ -7,7 +7,7 @@ daytona = Daytona()
 @app.get("/run")
 def run():
     # connect to existing running sandbox
-    sandbox = daytona.get("autoapply")
+    sandbox = daytona.get("jobradar")
 
     # run your pipeline (repo should already be available OR install here)
     sandbox.process.exec("python run_pipeline.py")
