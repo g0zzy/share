@@ -6,11 +6,8 @@ daytona = Daytona()
 
 @app.post("/run")
 def run():
-    # create fresh sandbox
-    sandbox = daytona.create({
-        "snapshot": "daytonaio/sandbox:0.6.0",
-        "name": "lovable-run"
-    })
+    # connect to existing running sandbox
+    sandbox = daytona.get("autoapply")
 
     # run your pipeline (repo should already be available OR install here)
     sandbox.process.exec("python run_pipeline.py")
