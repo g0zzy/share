@@ -4,7 +4,7 @@ from daytona import Daytona
 app = FastAPI()
 daytona = Daytona()
 
-@app.post("/run")
+@app.get("/run")
 def run():
     # connect to existing running sandbox
     sandbox = daytona.get("autoapply")
